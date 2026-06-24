@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Set Current Year in Footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Set Current Year in Footer (with defensive check)
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 
     // Mobile Menu Toggle with Accessibility & Scroll Lock
     const mobileToggle = document.getElementById('mobile-toggle');
