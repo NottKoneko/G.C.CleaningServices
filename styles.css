@@ -1026,3 +1026,51 @@ h1, h2, h3, h4 {
     padding-top: var(--sp-12);
     padding-bottom: var(--sp-12);
 }
+
+/* ==========================================================================
+   Bilingual translation styling
+   ========================================================================== */
+html[lang="en"] .lang-es {
+    display: none !important;
+}
+
+html[lang="es"] .lang-en {
+    display: none !important;
+}
+
+/* Language Toggle Button styling */
+.lang-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--clr-dark);
+    padding: 0.45rem var(--sp-4);
+    border-radius: var(--rad-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: all var(--trans-normal);
+    font-family: inherit;
+}
+
+.lang-toggle-btn:hover {
+    background-color: var(--clr-light);
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+}
+
+.lang-toggle-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .lang-toggle-btn {
+        margin-top: var(--sp-2);
+        padding: 0.6rem var(--sp-6);
+        font-size: 0.95rem;
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+}
