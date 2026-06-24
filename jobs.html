@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | G.C Cleaning Services Austin</title>
+    <meta name="description" content="Apply to join G.C Cleaning Services in Austin, TX. We are looking for professional, dedicated house cleaners. Serverless application form.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <meta property="og:title" content="Join Our Team | G.C Cleaning Services Austin">
+    <meta property="og:description" content="Apply to join G.C Cleaning Services in Austin, TX. We are looking for professional, dedicated house cleaners. Serverless application form.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gccleaningservices.pages.dev/jobs.html">
+</head>
+<body>
+
+    <header class="header header-subpage scrolled" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-heavy">G.C</span>
+                <span class="logo-light">Cleaning Services</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link">Services & Area</a></li>
+                    <li class="nav-item"><a href="jobs.html" class="nav-link active-link">Join Our Team</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link btn-outline">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="subpage-main">
+        <section class="section bg-light">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="text-center mb-8">
+                        <span class="badge">Careers</span>
+                        <h1 class="section-title">Join Our <span class="text-gradient">Professional Team</span></h1>
+                        <p class="section-desc max-w-md mx-auto">We are always looking for friendly, hard-working, and detailed cleaners to help keep Austin homes spotless. Fill out the application below to get started.</p>
+                    </div>
+
+                    <div class="form-card shadow-lg rounded-xl">
+                        <!-- Serverless action URL (Web3Forms/Formspree ready) -->
+                        <form action="https://api.web3forms.com/submit" method="POST" id="job-application-form">
+                            <!-- Web3Forms Access Key -->
+                            <input type="hidden" name="access_key" value="ca5b6c26-3482-43e5-b261-2ae13c55615d"><!-- API Key -->
+                            <input type="hidden" name="subject" value="New Cleaner Application from G.C Website">
+                            <!-- Bot prevention -->
+                            <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
+
+                            <!-- Section 1: Personal Information -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">1. Personal Information</h3>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="first-name" class="form-label">First Name <span class="text-required">*</span></label>
+                                        <input type="text" id="first-name" name="first_name" class="form-input" placeholder="Jane" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name" class="form-label">Last Name <span class="text-required">*</span></label>
+                                        <input type="text" id="last-name" name="last_name" class="form-input" placeholder="Doe" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number <span class="text-required">*</span></label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="(512) 555-0199" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address <span class="text-optional">(Optional)</span></label>
+                                        <input type="email" id="email" name="email" class="form-input" placeholder="jane.doe@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dob" class="form-label">Date of Birth <span class="text-required">*</span></label>
+                                        <input type="date" id="dob" name="date_of_birth" class="form-input" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="zip-code" class="form-label">ZIP Code / General Area <span class="text-required">*</span></label>
+                                        <input type="text" id="zip-code" name="location" class="form-input" placeholder="e.g., Downtown Austin, 78704" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 2: Availability -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">2. Work Availability</h3>
+                                <p class="form-section-subtitle">Select the days you are available to work. <span class="text-required">*</span></p>
+                                
+                                <div class="checkbox-grid">
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Monday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Monday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Tuesday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Tuesday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Wednesday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Wednesday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Thursday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Thursday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Friday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Friday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Saturday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Saturday</span>
+                                    </label>
+                                    <label class="custom-checkbox-wrapper">
+                                        <input type="checkbox" name="availability[]" value="Sunday" class="custom-checkbox">
+                                        <span class="checkbox-tile">Sunday</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group mt-6">
+                                    <label for="availability-notes" class="form-label">Availability & Hours Notes <span class="text-optional">(Optional)</span></label>
+                                    <textarea id="availability-notes" name="availability_notes" class="form-textarea" rows="3" placeholder="Specify if you prefer mornings, afternoons, part-time, full-time, etc."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Section 3: Requirements & Experience -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">3. Experience</h3>
+                                
+                                <div class="form-group mb-6">
+                                    <p class="form-question">Do you have a reliable vehicle and a valid driver's license? <span class="text-required">*</span></p>
+                                    <div class="radio-group">
+                                        <label class="custom-radio-wrapper">
+                                            <input type="radio" name="has_transportation" value="Yes" class="custom-radio" required>
+                                            <span class="radio-button">Yes</span>
+                                        </label>
+                                        <label class="custom-radio-wrapper">
+                                            <input type="radio" name="has_transportation" value="No" class="custom-radio" required>
+                                            <span class="radio-button">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-6">
+                                    <p class="form-question">Do you have professional cleaning experience? <span class="text-required">*</span></p>
+                                    <div class="radio-group">
+                                        <label class="custom-radio-wrapper">
+                                            <input type="radio" name="has_experience" value="Yes" id="experience-yes" class="custom-radio" required>
+                                            <span class="radio-button">Yes</span>
+                                        </label>
+                                        <label class="custom-radio-wrapper">
+                                            <input type="radio" name="has_experience" value="No" id="experience-no" class="custom-radio" required>
+                                            <span class="radio-button">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Dynamic Text Area (Conditional display) -->
+                                <div class="form-group transition-collapse" id="experience-details-group" style="display: none;">
+                                    <label for="experience-details" class="form-label">If yes, tell us a bit about your experience <span class="text-optional">(Optional)</span></label>
+                                    <textarea id="experience-details" name="experience_details" class="form-textarea" rows="4" placeholder="Mention home, condo, commercial cleaning, previous employers, or years active..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-footer mt-8">
+                                <!-- hCaptcha Spam Protection -->
+                                <div class="h-captcha" data-captcha="true"></div>
+
+                                <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
+                                <p class="form-safety-note">Your application is sent securely using an encrypted connection.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <span class="logo-heavy">G.C</span>
+                    <span class="logo-light">Cleaning Services</span>
+                </a>
+                <p class="footer-desc">Professional, stress-free house cleaning in Austin, TX.</p>
+            </div>
+            <div class="footer-contact">
+                <a href="tel:512-669-0354">512-669-0354</a>
+                <a href="mailto:gccleaningservices26@gmail.com">gccleaningservices26@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="year"></span> G.C Cleaning Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- hCaptcha and Web3Forms Client Validation -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>

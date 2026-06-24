@@ -73,4 +73,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Conditional display of Experience Details in jobs.html
+    const expYes = document.getElementById('experience-yes');
+    const expNo = document.getElementById('experience-no');
+    const expDetailsGroup = document.getElementById('experience-details-group');
+
+    if (expYes && expNo && expDetailsGroup) {
+        const toggleExperienceDetails = () => {
+            if (expYes.checked) {
+                expDetailsGroup.style.display = 'block';
+            } else {
+                expDetailsGroup.style.display = 'none';
+                const expDetailsText = document.getElementById('experience-details');
+                if (expDetailsText) expDetailsText.value = ''; // Reset when hidden
+            }
+        };
+
+        expYes.addEventListener('change', toggleExperienceDetails);
+        expNo.addEventListener('change', toggleExperienceDetails);
+    }
+
+    // Availability Checkbox Group Validation
+    const form = document.getElementById('job-application-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            const checkboxes = form.querySelectorAll('input[name="availability[]"]');
+            let checked = false;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked = true;
+            });
+            
+            if (!checked) {
+                e.preventDefault();
+                alert('Please select at least one day of the week you are available to work.');
+                
+                const availGrid = form.querySelector('.checkbox-grid');
+                if (availGrid) {
+                    availGrid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    }
 });
