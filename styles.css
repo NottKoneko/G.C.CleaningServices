@@ -654,6 +654,15 @@ h1, h2, h3, h4 {
         padding: var(--sp-6) var(--sp-4);
     }
     
+    .contact-btn {
+        padding: var(--sp-4) var(--sp-3); /* Reduces horizontal padding */
+        gap: var(--sp-3); /* Slightly reduces space between icon and text */
+    }
+    
+    .contact-btn-value {
+        font-size: 1rem; /* Slightly smaller text for better fit */
+    }
+    
     .footer-container {
         flex-direction: column;
         text-align: center;
