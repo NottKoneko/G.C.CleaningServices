@@ -58,13 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Decode contact info on hover to prevent bot scraping
-    const decodeElements = document.querySelectorAll('.decode-on-hover');
+    // Decode contact info on click to prevent bot scraping
+    const decodeElements = document.querySelectorAll('.decode-on-click');
     decodeElements.forEach(el => {
-        const handleDecode = () => {
+        const handleDecode = (e) => {
+            e.preventDefault();
+            let decodedHref = '';
             const encodedHref = el.getAttribute('data-encoded-href');
-            if (encodedHref && el.getAttribute('href') === '#') {
-                el.setAttribute('href', atob(encodedHref));
+            
+            if (encodedHref) {
+                decodedHref = atob(encodedHref);
+                el.setAttribute('href', decodedHref);
             }
             
             // Check if element itself has the text or a child has it
@@ -77,13 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Remove the class after decoding
-            el.classList.remove('decode-on-hover');
+            // Show a brief native alert with the info (the popup the user requested)
+            const decodedText = textElement ? textElement.textContent : '';
+            alert(`Contact Info:\n${decodedText}`);
+            
+            // Trigger the actual phone dialer / email client
+            if (decodedHref) {
+                window.location.href = decodedHref;
+            }
+            
+            // Remove the class after decoding so subsequent clicks just work normally
+            el.classList.remove('decode-on-click');
+            el.removeEventListener('click', handleDecode);
         };
 
-        // Trigger decode on mouse enter, focus, or touch
-        el.addEventListener('mouseenter', handleDecode, { once: true });
-        el.addEventListener('focus', handleDecode, { once: true });
-        el.addEventListener('touchstart', handleDecode, { once: true });
+        // Trigger decode on click
+        el.addEventListener('click', handleDecode);
     });
 });
