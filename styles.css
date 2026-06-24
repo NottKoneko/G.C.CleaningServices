@@ -65,6 +65,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevents the main page from scrolling when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -285,6 +290,9 @@ h1, h2, h3, h4 {
 
 /* Mobile Toggle */
 .mobile-toggle {
+    background: none;
+    border: none;
+    padding: 0;
     display: none;
     cursor: pointer;
     flex-direction: column;

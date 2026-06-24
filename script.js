@@ -2,15 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set Current Year in Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with Accessibility & Scroll Lock
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
+            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle visual classes
             mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Toggle accessibility and body scroll
+            mobileToggle.setAttribute('aria-expanded', !isExpanded);
+            document.body.classList.toggle('no-scroll');
         });
 
         // Close menu when a link is clicked
@@ -18,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('no-scroll');
             });
         });
     }
@@ -33,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth Scrolling for anchor links (if not supported natively by CSS)
+    // Smooth Scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
@@ -56,46 +65,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // Decode contact info on click to prevent bot scraping
-    const decodeElements = document.querySelectorAll('.decode-on-click');
-    decodeElements.forEach(el => {
-        const handleDecode = (e) => {
-            e.preventDefault();
-            let decodedHref = '';
-            const encodedHref = el.getAttribute('data-encoded-href');
-            
-            if (encodedHref) {
-                decodedHref = atob(encodedHref);
-                el.setAttribute('href', decodedHref);
-            }
-            
-            // Check if element itself has the text or a child has it
-            const textElement = el.hasAttribute('data-encoded-text') ? el : el.querySelector('[data-encoded-text]');
-            if (textElement) {
-                const encodedText = textElement.getAttribute('data-encoded-text');
-                if (encodedText) {
-                    textElement.textContent = atob(encodedText);
-                    textElement.removeAttribute('data-encoded-text');
-                }
-            }
-            
-            // Show a brief native alert with the info (the popup the user requested)
-            const decodedText = textElement ? textElement.textContent : '';
-            alert(`Contact Info:\n${decodedText}`);
-            
-            // Trigger the actual phone dialer / email client
-            if (decodedHref) {
-                window.location.href = decodedHref;
-            }
-            
-            // Remove the class after decoding so subsequent clicks just work normally
-            el.classList.remove('decode-on-click');
-            el.removeEventListener('click', handleDecode);
-        };
-
-        // Trigger decode on click
-        el.addEventListener('click', handleDecode);
     });
 });
