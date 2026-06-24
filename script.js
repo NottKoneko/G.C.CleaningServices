@@ -57,4 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Decode contact info on hover to prevent bot scraping
+    const decodeElements = document.querySelectorAll('.decode-on-hover');
+    decodeElements.forEach(el => {
+        const handleDecode = () => {
+            const encodedHref = el.getAttribute('data-encoded-href');
+            if (encodedHref && el.getAttribute('href') === '#') {
+                el.setAttribute('href', atob(encodedHref));
+            }
+            
+            // Check if element itself has the text or a child has it
+            const textElement = el.hasAttribute('data-encoded-text') ? el : el.querySelector('[data-encoded-text]');
+            if (textElement) {
+                const encodedText = textElement.getAttribute('data-encoded-text');
+                if (encodedText) {
+                    textElement.textContent = atob(encodedText);
+                    textElement.removeAttribute('data-encoded-text');
+                }
+            }
+            
+            // Remove the class after decoding
+            el.classList.remove('decode-on-hover');
+        };
+
+        // Trigger decode on mouse enter, focus, or touch
+        el.addEventListener('mouseenter', handleDecode, { once: true });
+        el.addEventListener('focus', handleDecode, { once: true });
+        el.addEventListener('touchstart', handleDecode, { once: true });
+    });
 });
