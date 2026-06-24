@@ -52,9 +52,14 @@
 }
 
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
 }
+/* Accessibility Enhancement: Respects user's motion preferences */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+} 
 
 body {
     font-family: var(--font-primary);
@@ -496,6 +501,9 @@ h1, h2, h3, h4 {
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--clr-dark);
+    /* Add these two lines below: */
+    word-break: break-word; 
+    overflow-wrap: break-word;
 }
 
 .phone-btn:hover {
