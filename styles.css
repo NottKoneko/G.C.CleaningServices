@@ -985,3 +985,44 @@ h1, h2, h3, h4 {
     margin-bottom: var(--sp-2);
     line-height: 1.4;
 }
+
+/* Spinner Animation & Form States */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(13, 148, 136, 0.15);
+    border-top: 5px solid var(--clr-accent);
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--clr-accent);
+    animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.fallback-container {
+    animation: fadeIn var(--trans-normal);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.py-12 {
+    padding-top: var(--sp-12);
+    padding-bottom: var(--sp-12);
+}
