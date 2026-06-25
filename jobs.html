@@ -17,11 +17,6 @@
     <meta property="og:description" content="Apply to join G.C Cleaning Services in Austin, TX. We are looking for professional, dedicated house cleaners. Serverless application form.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gccleaningservices.pages.dev/jobs.html">
-    <input type="text" id="first-name" name="first_name" class="form-input" autocomplete="given-name" required>
-    <input type="text" id="last-name" name="last_name" class="form-input" autocomplete="family-name" required>
-    <input type="tel" id="phone" name="phone" class="form-input" autocomplete="tel" required>
-    <input type="email" id="email" name="email" class="form-input" autocomplete="email">
-    <input type="text" id="zip-code" name="location" class="form-input" autocomplete="postal-code" required>
 </head>
 <body>
 
@@ -96,14 +91,10 @@
                     </div>
 
                     <div class="form-card shadow-lg rounded-xl">
-                        <!-- Cloudflare Pages Function targets `/api/submit` which handles Turnstile verification securely -->
                         <form action="/api/submit" method="POST" id="job-application-form">
-                            <!-- Subject for Email Notification -->
                             <input type="hidden" name="subject" value="New Cleaner Application from G.C Website">
-                            <!-- Bot prevention honeypot -->
                             <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
 
-                            <!-- Section 1: Personal Information -->
                             <div class="form-section">
                                 <h3 class="form-section-title">
                                     <span class="lang-en">1. Personal Information</span>
@@ -160,7 +151,6 @@
                                 </div>
                             </div>
 
-                            <!-- Section 2: Availability -->
                             <div class="form-section">
                                 <h3 class="form-section-title">
                                     <span class="lang-en">2. Work Availability</span>
@@ -232,7 +222,6 @@
                                 </div>
                             </div>
 
-                            <!-- Section 3: Requirements & Experience -->
                             <div class="form-section">
                                 <h3 class="form-section-title">
                                     <span class="lang-en">3. Experience</span>
@@ -289,7 +278,6 @@
                                      </div>
                                  </div>
 
-                                 <!-- Dynamic Text Area (Conditional display) -->
                                  <div class="form-group transition-collapse" id="experience-details-group" style="display: none;">
                                      <label for="experience-details" class="form-label">
                                          <span class="lang-en">If yes, tell us a bit about your experience <span class="text-optional">(Optional)</span></span>
@@ -308,7 +296,6 @@
                              </div>
 
                             <div class="form-footer mt-8">
-                                <!-- Cloudflare Turnstile Widget (Using testing sitekey 1x00000000000000000000AA by default, which passes locally) -->
                                 <div class="cf-turnstile" data-sitekey="0x4AAAAAADqiTuPANFyWk84b" data-theme="light"></div>
 
                                 <button type="submit" class="btn btn-primary btn-submit">
@@ -350,16 +337,21 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="year"></span> G.C Cleaning Services. 
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                <p style="margin: 0;">&copy; <span id="year"></span> G.C Cleaning Services. 
                     <span class="lang-en">All rights reserved.</span>
                     <span class="lang-es">Todos los derechos reservados.</span>
+                </p>
+                <p class="footer-credit" style="margin: 0; font-size: 0.8rem; display: flex; align-items: center; gap: 0.35rem; opacity: 0.75;">
+                    <span>Site made by</span>
+                    <a href="https://github.com/NottKoneko" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; color: inherit; transition: color var(--trans-normal);" aria-label="GitHub Profile of Creator" class="footer-credit-link">
+                        <svg height="16" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.35 3.12.88.01.4.01.88.01 1.14 0 .21-.15.46-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+                    </a>
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Cloudflare Turnstile API -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="script.js"></script>
 </body>

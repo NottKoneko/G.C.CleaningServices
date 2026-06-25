@@ -1074,3 +1074,7 @@ html[lang="es"] .lang-en {
         border-color: rgba(0, 0, 0, 0.15);
     }
 }
+
+.footer-credit-link:hover {
+    color: var(--clr-accent) !important;
+}
