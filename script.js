@@ -149,25 +149,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Language Toggle Functionality
-    const langToggle = document.getElementById('lang-toggle');
-    const langToggleText = document.getElementById('lang-toggle-text');
+    const langToggles = document.querySelectorAll('.lang-toggle-btn');
     
     const setLanguage = (lang) => {
         document.documentElement.setAttribute('lang', lang);
         localStorage.setItem('preferred-lang', lang);
-        if (langToggleText) {
-            langToggleText.textContent = lang === 'en' ? 'Español' : 'English';
-        }
+        langToggles.forEach(toggle => {
+            const textElement = toggle.querySelector('#lang-toggle-text') || toggle.querySelector('.lang-toggle-text');
+            if (textElement) {
+                textElement.textContent = lang === 'en' ? 'Español' : 'English';
+            }
+        });
         updatePlaceholders(lang);
     };
 
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
+    langToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const currentLang = document.documentElement.getAttribute('lang') || 'en';
             const newLang = currentLang === 'en' ? 'es' : 'en';
             setLanguage(newLang);
         });
-    }
+    });
 
     // Load initial language preference
     const savedLang = localStorage.getItem('preferred-lang') || (navigator.language.startsWith('es') ? 'es' : 'en');
