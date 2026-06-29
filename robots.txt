@@ -1,0 +1,6 @@
+# User-agent directives for search engine crawlers
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://gccleaningservices.pages.dev/sitemap.xml
