@@ -216,33 +216,180 @@
             <div class="container">
                 <div class="text-center section-header">
                     <span class="badge">
-                        <span class="lang-en">Our Work</span>
-                        <span class="lang-es">Nuestro Trabajo</span>
+                        <span class="lang-en">Real Transformations</span>
+                        <span class="lang-es">Transformaciones Reales</span>
                     </span>
                     <h2 class="section-title">
-                        <span class="lang-en"><span class="text-gradient">Before & After</span></span>
-                        <span class="lang-es"><span class="text-gradient">Antes y Después</span></span>
+                        <span class="lang-en">Before & <span class="text-gradient">After Gallery</span></span>
+                        <span class="lang-es">Galería <span class="text-gradient">Antes y Después</span></span>
                     </h2>
                     <p class="section-desc max-w-md mx-auto">
-                        <span class="lang-en">See the difference our professional cleaning services can make in your home.</span>
-                        <span class="lang-es">Vea la diferencia que nuestros servicios de limpieza profesional pueden hacer en su hogar.</span>
+                        <span class="lang-en">Explore real results from our recent professional cleaning and restoration projects.</span>
+                        <span class="lang-es">Explore resultados reales de nuestros proyectos recientes de limpieza profesional y restauración.</span>
                     </p>
                 </div>
 
-                <div class="grid-2 gallery-container">
-                    <div class="gallery-item shadow-subtle rounded-lg hover-lift">
-                        <div class="gallery-label before-label">
-                            <span class="lang-en">Before</span>
-                            <span class="lang-es">Antes</span>
+                <!-- Gallery Carousel Wrapper -->
+                <div class="gallery-carousel-wrapper">
+                    <!-- Carousel Nav Buttons -->
+                    <button type="button" class="carousel-nav-btn carousel-prev" id="gallery-prev" aria-label="Previous Project">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-nav-btn carousel-next" id="gallery-next" aria-label="Next Project">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+
+                    <!-- Carousel Viewport & Track -->
+                    <div class="gallery-carousel-viewport" id="gallery-viewport">
+                        <div class="gallery-carousel-track" id="gallery-track">
+                            
+                            <!-- Slide 1: Post-Renovation Wood Floor Deep Clean -->
+                            <article class="gallery-slide">
+                                <div class="gallery-card shadow-subtle rounded-xl">
+                                    <div class="gallery-card-header">
+                                        <div class="gallery-slide-meta">
+                                            <span class="gallery-card-category">
+                                                <span class="lang-en">Post-Renovation Care</span>
+                                                <span class="lang-es">Cuidado Post-Renovación</span>
+                                            </span>
+                                            <span class="slide-count-badge">1 / 2</span>
+                                        </div>
+                                        <h3 class="gallery-card-title">
+                                            <span class="lang-en">Post-Renovation Floor Deep Clean</span>
+                                            <span class="lang-es">Limpieza Profunda de Pisos Post-Renovación</span>
+                                        </h3>
+                                        <p class="gallery-card-desc">
+                                            <span class="lang-en">Complete extraction of construction dust, drywall residue, and fine debris following home remodeling.</span>
+                                            <span class="lang-es">Extracción completa de polvo de construcción, residuos de yeso y escombros finos tras remodelaciones.</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="comparison-row grid-2-row">
+                                        <div class="comparison-panel panel-before">
+                                            <div class="panel-badge badge-before">
+                                                <span class="lang-en">Before</span>
+                                                <span class="lang-es">Antes</span>
+                                            </div>
+                                            <div class="single-img-wrapper">
+                                                <img src="images/before.jpg" alt="Wood flooring covered in construction dust before cleaning" class="comparison-img" loading="lazy">
+                                                <span class="img-label">
+                                                    <span class="lang-en">Construction Dust & Debris</span>
+                                                    <span class="lang-es">Polvo y Residuos de Obra</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="comparison-panel panel-after">
+                                            <div class="panel-badge badge-after">
+                                                <span class="lang-en">After</span>
+                                                <span class="lang-es">Después</span>
+                                            </div>
+                                            <div class="single-img-wrapper">
+                                                <img src="images/after.jpg" alt="Clean polished wood flooring after post-renovation cleaning" class="comparison-img" loading="lazy">
+                                                <span class="img-label label-success">
+                                                    <span class="lang-en">Polished & Dust-Free</span>
+                                                    <span class="lang-es">Pulido y Libre de Polvo</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Slide 2: Shower Restoration -->
+                            <article class="gallery-slide">
+                                <div class="gallery-card shadow-subtle rounded-xl">
+                                    <div class="gallery-card-header">
+                                        <div class="gallery-header-flex">
+                                            <div class="gallery-header-text">
+                                                <div class="gallery-slide-meta">
+                                                    <span class="gallery-card-category">
+                                                        <span class="lang-en">Shower & Glass Restoration</span>
+                                                        <span class="lang-es">Restauración de Ducha y Vidrio</span>
+                                                    </span>
+                                                    <span class="slide-count-badge">2 / 2</span>
+                                                </div>
+                                                <h3 class="gallery-card-title">
+                                                    <span class="lang-en">Shower Glass & Tile Deep Restoration</span>
+                                                    <span class="lang-es">Restauración Profunda de Vidrio y Azulejo de Ducha</span>
+                                                </h3>
+                                                <p class="gallery-card-desc">
+                                                    <span class="lang-en">Removal of heavy mineral deposits, hard water stains, and soap scum buildup on shower glass and floor tiles.</span>
+                                                    <span class="lang-es">Eliminación de depósitos minerales pesados, manchas de agua dura y residuos de jabón en vidrios y azulejos.</span>
+                                                </p>
+                                            </div>
+
+                                            <!-- View Tabs Switcher -->
+                                            <div class="gallery-view-tabs">
+                                                <button type="button" class="gallery-tab-btn active" data-view="all">
+                                                    <span class="lang-en">Full Comparison</span>
+                                                    <span class="lang-es">Comparación Completa</span>
+                                                </button>
+                                                <button type="button" class="gallery-tab-btn" data-view="door">
+                                                    <span class="lang-en">Glass Door</span>
+                                                    <span class="lang-es">Puerta de Vidrio</span>
+                                                </button>
+                                                <button type="button" class="gallery-tab-btn" data-view="floor">
+                                                    <span class="lang-en">Shower Floor</span>
+                                                    <span class="lang-es">Piso de Ducha</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3-Column Comparison Row -->
+                                    <div class="comparison-row grid-3-row" id="shower-comparison-row" data-view-mode="all">
+                                        <div class="comparison-panel panel-before view-door-panel">
+                                            <div class="panel-badge badge-before">
+                                                <span class="lang-en">Before: Glass Door</span>
+                                                <span class="lang-es">Antes: Puerta de Vidrio</span>
+                                            </div>
+                                            <div class="single-img-wrapper">
+                                                <img src="images/shower-door-before.jpg" alt="Dirty shower glass door before cleaning with soap scum" class="comparison-img" loading="lazy">
+                                                <span class="img-label">
+                                                    <span class="lang-en">Heavy Soap Scum</span>
+                                                    <span class="lang-es">Acumulación de Jabón</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="comparison-panel panel-before view-floor-panel">
+                                            <div class="panel-badge badge-before">
+                                                <span class="lang-en">Before: Shower Floor</span>
+                                                <span class="lang-es">Antes: Piso de Ducha</span>
+                                            </div>
+                                            <div class="single-img-wrapper">
+                                                <img src="images/shower-floor-before.jpg" alt="Stained shower floor tiles before deep cleaning" class="comparison-img" loading="lazy">
+                                                <span class="img-label">
+                                                    <span class="lang-en">Stained Tile & Drain</span>
+                                                    <span class="lang-es">Azulejo y Drenaje Manchados</span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="comparison-panel panel-after view-after-panel">
+                                            <div class="panel-badge badge-after">
+                                                <span class="lang-en">After: Complete Restoration</span>
+                                                <span class="lang-es">Después: Restauración Completa</span>
+                                            </div>
+                                            <div class="single-img-wrapper">
+                                                <img src="images/shower-after.jpg" alt="Clean shower glass and sparkling tile after restoration" class="comparison-img" loading="lazy">
+                                                <span class="img-label label-success">
+                                                    <span class="lang-en">Restored & Sparkling</span>
+                                                    <span class="lang-es">Restaurado y Reluciente</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        <img src="images/before.jpg" alt="Dirty bathroom floor before cleaning" class="gallery-img" loading="lazy">
                     </div>
-                    <div class="gallery-item shadow-subtle rounded-lg hover-lift">
-                        <div class="gallery-label after-label">
-                            <span class="lang-en">After</span>
-                            <span class="lang-es">Después</span>
-                        </div>
-                        <img src="images/after.jpg" alt="Clean bathroom floor after cleaning" class="gallery-img" loading="lazy">
+
+                    <!-- Carousel Pagination Dots -->
+                    <div class="carousel-dots" id="carousel-dots">
+                        <button type="button" class="dot-btn active" data-slide="0" aria-label="Go to slide 1"></button>
+                        <button type="button" class="dot-btn" data-slide="1" aria-label="Go to slide 2"></button>
                     </div>
                 </div>
             </div>
