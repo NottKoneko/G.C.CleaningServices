@@ -1,0 +1,7 @@
+# Local Legal & Internal Documentation
+LEGAL_NOTES.md
+
+# Dependencies & Build Output
+node_modules/
+.DS_Store
+Thumbs.db
